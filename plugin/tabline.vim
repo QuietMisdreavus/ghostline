@@ -1,6 +1,9 @@
-" custom tabline
-" shows buffers, even when tabs are in use
-" if a help window is visible, shows it on the right side of the bar
+" ghostline - a custom statusline/tabline for vim
+" (c) QuietMisdreavus 2020
+
+" This Source Code Form is subject to the terms of the Mozilla Public
+" License, v. 2.0. If a copy of the MPL was not distributed with this
+" file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 " always show tabline, even when only one tab is active
 set showtabline=2

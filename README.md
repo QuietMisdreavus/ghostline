@@ -50,3 +50,8 @@ remaining buffers are then listed after that.
 If `misdreavus-mru` is enabled, the MRU list for the current window is used for the "lead tabs"
 instead, meaning that the buffer before the "lead tabs" marker (the `||` in the bar or the last
 buffer if no `||` is listed) will be the one switched to with the `<Plug>RotateMru` action.
+
+## license
+
+`ghostline` is available under the terms of the Mozilla Public License, version 2.0. For more
+information, check the LICENSE file.
