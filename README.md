@@ -6,11 +6,13 @@
 ![vim help file sample](images/gl-help.png)\
 ![rust sample](images/gl-rust.png)\
 ![rust sample in lucius dark](images/gl-rust-luciusdark.png)\
-![rust sample in zenburn](images/gl-rust-zenburn.png)\
+![rust sample in zenburn](images/gl-rust-zenburn.png)
 
 `ghostline` started as an experiment to write my own status-bar and tab-bar and understand the
 things that [vim-airline] was doing under-the-hood to create its fancy UI. Over time it became one
 of my testbeds for writing vim-script and displaying more information in a relatively compact form.
+
+[vim-airline]: https://github.com/vim-airline/vim-airline
 
 The statusline includes integration with [vim-fugitive][] (displaying the current branch/commit) and
 [ALE][] (displaying the number of errors in the current buffer, if any.
