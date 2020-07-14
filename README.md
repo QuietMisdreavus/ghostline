@@ -49,9 +49,16 @@ The current buffer will always be shown in the top left. Right next to it is the
 The alternate file's buffer is also indicated using a `^` by the buffer number instead of `#`. The
 remaining buffers are then listed after that.
 
-If `misdreavus-mru` is enabled, the MRU list for the current window is used for the "lead tabs"
-instead, meaning that the buffer before the "lead tabs" marker (the `||` in the bar or the last
-buffer if no `||` is listed) will be the one switched to with the `<Plug>RotateMru` action.
+If [`misdreavus-mru`] is installed and enabled, the MRU list for the current window is used for the
+"lead tabs" instead, meaning that the buffer before the "lead tabs" marker (the `||` in the bar or
+the last buffer if no `||` is listed) will be the one switched to with the `<Plug>RotateMru` action.
+
+[`misdreavus-mru`]: https://github.com/QuietMisdreavus/misdreavus-mru
+
+## installing
+
+Point your preferred plugin manager at `'QuietMisdreavus/ghostline'`, or clone this repo into your
+`pack/` or `bundle/` folder, or however you add vim plugins to your config.
 
 ## license
 
