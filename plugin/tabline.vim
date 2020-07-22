@@ -30,7 +30,7 @@ function! MisdreavusIncludeInLeftTabs(b)
     endif
 
     if UseMisdreavusMRU()
-        let idx = index(g:misdreavus_mru[winnr()], a:b)
+        let idx = index(g:misdreavus_mru[win_getid()], a:b)
         return idx < 0 || idx >= g:misdreavus_mru_rotate_count
     endif
 
@@ -47,7 +47,7 @@ function! MisdreavusIncludeInRightTabs(b)
     endif
 
     if UseMisdreavusMRU()
-        if index(g:misdreavus_mru[winnr()], a:b) >= 0
+        if index(g:misdreavus_mru[win_getid()], a:b) >= 0
             return v:false
         endif
     endif
@@ -133,9 +133,9 @@ endfunction
 function! UseMisdreavusMRU()
     if !exists('g:misdreavus_mru')
         return v:false
-    elseif !has_key(g:misdreavus_mru, winnr())
+    elseif !has_key(g:misdreavus_mru, win_getid())
         return v:false
-    elseif len(g:misdreavus_mru[winnr()]) < 2
+    elseif len(g:misdreavus_mru[win_getid()]) < 2
         return v:false
     elseif !exists('g:misdreavus_mru_rotate_count')
         return v:false
@@ -150,7 +150,7 @@ function! MisdreavusMRULeadTabs()
     let first = v:true
     let s = ''
 
-    for b in g:misdreavus_mru[winnr()]
+    for b in g:misdreavus_mru[win_getid()]
         if first
             let first = v:false
         else
