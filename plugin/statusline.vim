@@ -52,6 +52,8 @@ function! MisdreavusStatusLine()
     let s .= '%= '
 
     if qftype == ''
+        " arglist counters, if an arglist is set
+        let s .= '%{MisdreavusArglistCounter()}'
         " ll/qf counters, if the lists are loaded
         let s .= '%{MisdreavusLocationCounter()}'
         if w == 1
@@ -131,6 +133,33 @@ function! MisdreavusModeFlag()
 
     " for unknown modes just return the flag unaltered
     return mode
+endfunction
+
+function! MisdreavusArglistCounter()
+    if argc() == 0
+        return ''
+    endif
+
+    let wid = winnr()
+
+    if arglistid() == 0
+        " if the current window is using the global arg list, check whether we should display it
+        for w in range(1, winnr('$'))
+            if arglistid(w) == 0
+                if w == wid
+                    " this is the first window using the global arg list
+                    break
+                else
+                    " an earlier window is using the global arg list, don't display it here
+                    return ''
+                endif
+            endif
+        endfor
+
+        return 'a: (' .. (argidx() + 1) .. '/' .. argc() .. ') '
+    else
+        return 'a(l): (' .. (argidx() + 1) .. '/' .. argc() .. ') '
+    endif
 endfunction
 
 " location list index/count for statusline

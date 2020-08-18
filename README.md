@@ -26,6 +26,10 @@ displayed:
 ![quickfix counter](images/gl-quickfix.png)\
 ![location list counter](images/gl-ale-count.png)
 
+If there are files in the argument list, the count and current index will also be displayed. Local
+argument lists will be displayed in the window for that list; the global argument list will be
+displayed in the first window that doesn't have a local list.
+
 ## tabline
 
 `ghostline` also includes a custom tabline, displaying active buffers, including their `modified`
