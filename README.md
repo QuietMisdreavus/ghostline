@@ -71,7 +71,7 @@ function! SetTabFill(colors_name)
     if a:colors_name == 'lucius'
         let g:ghostline_tab_fill_color = 'Folded'
     else
-        unlet! g:ghostline_tab_fill_color
+        unlet! g:ghostline_tab_fill_color " defaults to TabLineFill
     endif
 endfunction
 
