@@ -206,8 +206,11 @@ function! MisdreavusTabline()
         endif
     endfor
 
-    " color remainder light
-    let s .= '%#Folded#'
+    if exists('g:ghostline_tab_fill_color')
+        let s .= '%#' . g:ghostline_tab_fill_color . '#'
+    else
+        let s .= '%#TabLineFill#'
+    endif
 
     let firstbuf = v:true
 

@@ -59,6 +59,31 @@ the last buffer if no `||` is listed) will be the one switched to with the `<Plu
 
 [`misdreavus-mru`]: https://github.com/QuietMisdreavus/misdreavus-mru
 
+### fill color
+
+The highlight color used to color the blank space between the "left tabs" and "right tabs" is
+configurable by setting the `g:ghostline_tab_fill_color` variable. For example, the sample images
+here use the `Folded` color. I recommend configuring this per-color scheme, using something like
+this:
+
+```vim
+function! SetTabFill(colors_name)
+    if a:colors_name == 'lucius'
+        let g:ghostline_tab_fill_color = 'Folded'
+    else
+        unlet! g:ghostline_tab_fill_color
+    endif
+endfunction
+
+augroup GhostlineVimrc
+    autocmd!
+    autocmd ColorSchemePre * call SetTabFill(expand('<amatch>'))
+augroup END
+```
+
+If you set the autocmd after you call `:colorscheme` in your configuration, you may need to add a
+`call SetTabFill(g:colors_name)` to make sure that it's properly set up when Vim is loaded.
+
 ## installing
 
 Point your preferred plugin manager at `'QuietMisdreavus/ghostline'`, or clone this repo into your
